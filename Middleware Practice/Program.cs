@@ -3,6 +3,7 @@
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
+app.UseMiddleware<MaintenanceMiddleware>();
 
 app.Use(async (ctx, next) =>
 {
@@ -43,7 +44,7 @@ app.Use(async (ctx, next) =>
 
 app.UseMiddleware<AgentDetectorMiddleware>();
 app.UseMiddleware<CustomHeaderMiddleware>();
-app.UseMiddleware<MaintenanceMiddleware>();
+
 
 app.MapGet("/Home", () => "Nothing to show yet.");
 
