@@ -46,7 +46,7 @@ app.UseMiddleware<AgentDetectorMiddleware>();
 app.UseMiddleware<CustomHeaderMiddleware>();
 
 
-app.MapGet("/Home", () => "Nothing to show yet.");
+app.MapGet("/Home", () => "Nothing to show yet.\n");
 
 
 app.Run();
